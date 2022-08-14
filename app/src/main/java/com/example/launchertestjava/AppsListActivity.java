@@ -55,6 +55,9 @@ public class AppsListActivity extends Activity {
             app.name = ri.activityInfo.packageName;
             app.icon = ri.activityInfo.loadIcon(manager);
             apps.add(app);
+            //TODO
+            //if(apps.size() == 10)
+            //    break;
         }
 
         try {
@@ -87,14 +90,15 @@ public class AppsListActivity extends Activity {
             }
         };
         list.setAdapter(adapter);
+
     }
 
     private void addClickListener() {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> av, View v, int pos, long id) {
-                Intent i = manager.getLaunchIntentForPackage(apps.get(pos).name.toString());
 
+                Intent i = manager.getLaunchIntentForPackage(apps.get(pos).name.toString());
                 AppsListActivity.this.startActivity(i);
             }
         });

@@ -7,5 +7,6 @@ public class AppDetail {
     CharSequence name;
     Drawable icon;
     String type;
+    String packageName;
 }
 
